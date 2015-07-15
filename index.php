@@ -31,10 +31,10 @@
                         echo "I'm graduating today!!!";
                     }
                     elseif ($grad < 0) {
-                        echo 'Graduated <span class="impact">' . $chris->daysUntilGraduation() . '</span> days ago';
+                        echo 'Graduated <span class="impact">' . abs($grad) . '</span> days ago';
                     }
                     else {
-                        echo 'Graduating in <span class="impact">' . $chris->daysUntilGraduation() . '</span> days';
+                        echo 'Graduating in <span class="impact">' . $grad . '</span> days';
                     }
                     ?>
                 </li>
