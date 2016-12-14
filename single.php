@@ -18,14 +18,22 @@
 				<?php the_content(''); ?>
 			</div>
 
-			<div itemscope itemtype="http://data-vocabulary.org/Person" class="vcard author post-author"> 
-				<span class="fn"><a href="http://ashton.codes/about" rel="author" itemprop="name">Chris Ashton</a></span>
-				<span itemprop="photo"><?=$chris->picture(); ?></span>
-				<span itemprop="url">http://ashton.codes</span>
-				<span itemprop="role">Web developer</span>
-				<span itemprop="address"><?=$chris->location(); ?></span>
-				<span itemprop="affiliation">Webdapper</span>
-				<time class="published updated post-date" datetime="<?php echo get_the_time('Y-m-d H:i:s'); ?>"><?php the_time('Y-m-d H:i:s'); ?></time>
+			<div class="bio">
+				<div class="bio__image">
+	        		<?php echo get_avatar(get_the_author_email(), 150); ?>
+	        	</div>
+				<div itemscope itemtype="http://data-vocabulary.org/Person" class="vcard author post-author">
+					<time class="published updated post-date" datetime="<?php echo get_the_time('Y-m-d H:i:s'); ?>"><?php the_time('jS F, Y'); ?></time>
+					<strong><span class="fn">Chris Ashton</span></strong>
+					<span itemprop="photo" style="display: none"><?=$chris->picture(); ?></span>
+					<span itemprop="url" style="display: none">http://ashton.codes</span>
+					<span itemprop="role" style="display: none">Test Engineer</span>
+					<span itemprop="address" style="display: none"><?=$chris->location(); ?></span>
+					<span itemprop="affiliation" style="display: none">Webdapper</span>
+			        <div class="bio__description">
+			            <?php the_author_meta('description'); ?>
+			        </div>
+				</div>
 			</div>
 		</article>
 	</div>
@@ -38,7 +46,7 @@
 	?>
 
 	<?php comments_template(); ?>
-	
+
 	<?php endwhile; ?>
 
 <?php else : ?>
