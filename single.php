@@ -1,4 +1,4 @@
-<?php require('header.php'); ?>
+<?php get_header(); ?>
 
 <?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
@@ -25,10 +25,10 @@
 				<div itemscope itemtype="http://data-vocabulary.org/Person" class="vcard author post-author">
 					<time class="published updated post-date" datetime="<?php echo get_the_time('Y-m-d H:i:s'); ?>"><?php the_time('jS F, Y'); ?></time>
 					<strong><span class="fn">Chris Ashton</span></strong>
-					<span itemprop="photo" style="display: none"><?=$chris->picture(); ?></span>
+					<span itemprop="photo" style="display: none"><?=ChrisApi::picture(); ?></span>
 					<span itemprop="url" style="display: none">http://ashton.codes</span>
 					<span itemprop="role" style="display: none">Test Engineer</span>
-					<span itemprop="address" style="display: none"><?=$chris->location(); ?></span>
+					<span itemprop="address" style="display: none"><?=ChrisApi::location(); ?></span>
 					<span itemprop="affiliation" style="display: none">Webdapper</span>
 			        <div class="bio__description">
 			            <?php the_author_meta('description'); ?>
@@ -56,4 +56,4 @@
 <?php endif; ?>
 
 <?php get_sidebar(); ?>
-<?php require('footer.php'); ?>
+<?php get_footer(); ?>

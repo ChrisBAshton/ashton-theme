@@ -1,32 +1,32 @@
-<?php require('header.php'); ?>
+<?php get_header(); ?>
 
     <div class="homepage">
-        <h3><?=$chris->description(); ?></h3>
+        <h3><?=ChrisApi::description(); ?></h3>
 
         <div class="container" style="border: 0; margin: 60px auto 40px;">
             <div class="quote-icon quote-icon--blog"></div>
             <div class="blog__snippet">
-                <a href="<?=$chris->blogUrl(); ?>"><h2><?=$chris->blogTitle(); ?></h2>
+                <a href="<?=ChrisApi::blogUrl(); ?>"><h2><?=ChrisApi::blogTitle(); ?></h2>
 
-                <p class="quote"><?=$chris->blogExcerpt(); ?></p></a>
+                <p class="quote"><?=ChrisApi::blogExcerpt(); ?></p></a>
             </div>
         </div>
 
         <div class="col-md-6">
-            <img class="header__image" src="<?=$chris->picture(); ?>" alt="<?= $chris->name(); ?>" />
+            <img class="header__image" src="<?=ChrisApi::picture(); ?>" alt="<?= ChrisApi::name(); ?>" />
             <ul class="bulletless">
                 <li>
-                    <span class="impact">Status:</span> <?=$chris->availability(); ?>
+                    <span class="impact">Status:</span> <?=ChrisApi::availability(); ?>
                 </li>
                 <li>
-                    Living in <span class="impact"><?=$chris->location(); ?></span>
+                    Living in <span class="impact"><?=ChrisApi::location(); ?></span>
                 </li>
                 <li>
-                    Been coding <span class="impact"><?=number_format($chris->codingDays()); ?></span> days
+                    Been coding <span class="impact"><?=number_format(ChrisApi::codingDays()); ?></span> days
                 </li>
                 <li>
                     <?php
-                    $grad = $chris->daysUntilGraduation();
+                    $grad = ChrisApi::daysUntilGraduation();
                     if ($grad === 0) {
                         echo "I'm graduating today!!!";
                     }
@@ -43,10 +43,10 @@
         </div>
         <div class="col-md-6">
             <?php
-                echo apply_filters('the_content', 'http://twitter.com/ChrisBAshton/status/' . $chris->tweet());
+                echo apply_filters('the_content', 'http://twitter.com/ChrisBAshton/status/' . ChrisApi::tweet());
             ?>
         </div>
     </div>
 
 <?php get_sidebar(); ?>
-<?php require('footer.php'); ?>
+<?php get_footer(); ?>

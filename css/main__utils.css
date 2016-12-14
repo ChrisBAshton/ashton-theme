@@ -1,0 +1,20 @@
+/* Self clear automatically */
+.selfclear:before, .selfclear:after {
+    content: "";
+    display: table;
+} 
+.selfclear:after {
+    clear: both;
+}
+.selfclear {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+/*
+This is fine for IE8 and up. Saved here for reference.
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+*/

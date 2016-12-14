@@ -1,4 +1,4 @@
-<?php require('header.php'); ?>
+<?php get_header(); ?>
 
 <?php if (have_posts()) :?>
     <?php $i = 0; while(have_posts()) : the_post(); $i++; ?>
@@ -12,7 +12,7 @@
             </h2>
             <div class="post__summary-date"><?php the_time('d F Y'); ?></div>
         </div>
-        
+
         <?php
             if ( has_post_thumbnail() ) {
                 echo "<div class='post__summary-thumb'>";
@@ -26,14 +26,14 @@
         </div>
     </article>
 
-    
+
     <?php endwhile; ?>
-    
+
     <div class="pagination">
         <p class="older"><?php next_posts_link('Older posts'); ?></p>
         <p class="newer"><?php previous_posts_link('Newer posts'); ?></p>
     </div>
-    
+
 <?php else : ?>
     <h2>Nothing Found</h2>
     <p>Sorry, but you are looking for something that isn't here.</p>
@@ -41,4 +41,4 @@
 <?php endif; ?>
 
 <?php get_sidebar(); ?>
-<?php require('footer.php'); ?>
+<?php get_footer(); ?>

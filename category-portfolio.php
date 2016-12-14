@@ -1,4 +1,4 @@
-<?php require('header.php'); ?>
+<?php get_header(); ?>
 
 	<?php
 	$args = array(
@@ -13,14 +13,14 @@
 		<div class="post__summary">
 			<h2 class="post__summary-title">
 				<a href="<?php the_permalink(); ?>">
-					<?php if ($i === 1) echo '<!-- latest_blog_begin--title -->';  ?> 
+					<?php if ($i === 1) echo '<!-- latest_blog_begin--title -->';  ?>
 					<?php the_title(); ?>
-					<?php if ($i === 1) echo '<!-- latest_blog_end--title -->';  ?> 
+					<?php if ($i === 1) echo '<!-- latest_blog_end--title -->';  ?>
 				</a>
 			</h2>
 			<div class="post__summary-date"><?php the_time('d F Y'); ?></div>
 		</div>
-		
+
 		<?php
 			$thumbUrl = get_post_meta(get_the_id(), 'thumbnail_300x300', true);
 
@@ -38,16 +38,16 @@
 			// 	echo "</div>";
 			// }
 		?>
-		
+
 		<div class="post__summary-excerpt">
 			<p>
-				<?php if ($i === 1) echo '<!-- latest_blog_begin--excerpt -->';  ?> 
+				<?php if ($i === 1) echo '<!-- latest_blog_begin--excerpt -->';  ?>
 				<?php echo get_the_excerpt(); ?>
-				<?php if ($i === 1) echo '<!-- latest_blog_end--excerpt -->';  ?> 
+				<?php if ($i === 1) echo '<!-- latest_blog_end--excerpt -->';  ?>
 			</p>
 		</div>
 	</article>
-	
+
 	<?php endforeach; ?>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -63,4 +63,4 @@
 </script>
 
 <?php get_sidebar(); ?>
-<?php require('footer.php'); ?>
+<?php get_footer(); ?>

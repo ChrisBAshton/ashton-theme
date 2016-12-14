@@ -1,0 +1,74 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body {
+    background: #EDEDED;
+    background-image: url('[THEME_ROOT]/css/crossword.png');
+    margin: 0;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    margin: 10px;
+    font-size: 0.9em;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poiret One', cursive;
+    line-height: 1.6em;
+    margin: 0.9em 0;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.6em;
+}
+
+h3 {
+    margin: 1em;
+}
+
+li {
+    margin: 0.8em 0;
+}
+
+p {
+    margin: 1.4em 0;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+a {
+    color: indianred;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(160, 43, 43);
+}
+
+/* All 'new window' links have new window icons applied to them */
+a[target=_blank] {
+    background: url('data:image/gif;;base64,R0lGODlhCwALAJEAAP///5mZmf///wAAACH5BAUUAAIALAAAAAALAAsAAAIdlIOJJgEPA3MKKGdRfjRtu3UcFGFXRVpTqh6nZBQAOw==') no-repeat center right;
+    padding-right: 15px;
+}
+
+/* All PDF links should have PDF icon applied to them */
+a[href$=".pdf"] {
+    background: url('[THEME_ROOT]/css/pdf.gif') no-repeat center right;
+    padding-right: 20px;
+}

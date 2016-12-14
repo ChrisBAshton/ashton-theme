@@ -1,0 +1,36 @@
+@media only screen and (max-width: 976px) {
+
+.header__image_container {
+    max-width: 150px;
+}
+
+.header__image_container {
+    float: none;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.header__image_container p {
+    display: none;
+}
+
+.header__icons {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    text-align: center;
+    display: block;
+}
+
+.terminal_cta {
+    display: none;
+}
+
+.quote-icon {
+    float: none;
+}
+
+}
