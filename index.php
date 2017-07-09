@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+date_default_timezone_set('Europe/London');
+get_header();
+?>
 
     <div class="homepage">
         <h3><?=ChrisApi::description(); ?></h3>
@@ -45,6 +48,10 @@
             <?php
                 echo apply_filters('the_content', 'http://twitter.com/ChrisBAshton/status/' . ChrisApi::tweet());
             ?>
+        </div>
+
+        <div class="col-md-12">
+            <iframe src="<?=ChrisApi::instagramPost(); ?>embed" height="710" width="612" frameborder="0" scrolling="no"></iframe>
         </div>
     </div>
 

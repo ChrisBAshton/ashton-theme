@@ -18,7 +18,7 @@ $(document).ready(function () {
 </script>
 
 <footer>
-Site powered by the <a href="http://api.ashton.codes/" target="_blank">Ashton API</a> (last updated <?= ChrisApi::apiLastUpdated(); ?>). Think that's nerdy? <a href="/terminal">Try the terminal</a>. All rights reserved.
+Site powered by the <a href="//api.ashton.codes/">Ashton API</a> (last updated <?= ChrisApi::apiLastUpdated(); ?>). Think that's nerdy? <a href="//terminal.ashton.codes">Try the terminal</a>. All rights reserved.
 </footer>
 
 <?php wp_footer(); ?>

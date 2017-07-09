@@ -1,1 +1,9 @@
+# because OSX
 .DS_Store
+
+# contains a couple of files which live at the root of my site
+root/
+
+# I'll kill this folder eventually
+tmp_backup/
+

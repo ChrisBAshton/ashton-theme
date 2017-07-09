@@ -68,6 +68,14 @@ class ChrisApi {
         return ChrisApi::$details['social']['github'];
     }
 
+    public function instagram() {
+        return ChrisApi::$details['social']['instagram'];
+    }
+
+    public function instagramPost() {
+        return ChrisApi::$details['social']['instagramPost'];
+    }
+
     /* MISCELLANEOUS */
 
     public static function codingDays() {
@@ -79,6 +87,7 @@ class ChrisApi {
     }
 
     public static function apiLastUpdated() {
-        return date("dS M, g:ia", ChrisApi::$details['miscellaneous']['apiLastUpdated']);
+        $timestamp = ChrisApi::$details['miscellaneous']['apiLastUpdated'];
+        return date("dS M, g:ia", $timestamp);
     }
 }
