@@ -197,3 +197,31 @@
 .dropdown-menu>li>a {
     padding: 10px 20px;
 }
+
+#terminal-placeholder {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+}
+
+#terminal-placeholder {
+    display: none;
+}
+
+#terminal-placeholder[data-active="true"] {
+    display: block;
+}
+
+#terminal-loading {
+    text-align: center;
+}
+
+#terminal-placeholder[data-loaded="true"] #terminal-loading {
+    display: none;
+}
+
+#terminal-placeholder iframe {
+    width: 300px;
+    height: 280px;
+}
