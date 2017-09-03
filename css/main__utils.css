@@ -2,12 +2,21 @@
 .selfclear:before, .selfclear:after {
     content: "";
     display: table;
-} 
+}
 .selfclear:after {
     clear: both;
 }
 .selfclear {
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.off-screen {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 /*

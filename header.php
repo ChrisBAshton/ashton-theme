@@ -45,17 +45,17 @@
 				<ul class="header__icons bulletless">
 					<li class="header__icons__icon header__icons__icon--twitter">
 						<a href="<?= ChrisApi::twitter(); ?>" target="_blank">
-							<span class="header__icons__icon__text">Twitter</span>
+							<span class="off-screen header__icons__icon__text">Twitter</span>
 						</a>
 					</li>
 					<li class="header__icons__icon header__icons__icon--linkedin">
 						<a href="<?= ChrisApi::linkedin(); ?>" target="_blank">
-							<span class="header__icons__icon__text">LinkedIn</span>
+							<span class="off-screen header__icons__icon__text">LinkedIn</span>
 						</a>
 					</li>
 					<li class="header__icons__icon header__icons__icon--github">
 						<a href="<?= ChrisApi::github(); ?>" target="_blank">
-							<span class="header__icons__icon__text">GitHub</span>
+							<span class="off-screen header__icons__icon__text">GitHub</span>
 						</a>
 					</li>
 				</ul>

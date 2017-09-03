@@ -72,14 +72,6 @@
     font-size: 1.25em;
 }
 
-header ul {
-    list-style-type: none;
-    padding: 0;
-}
-header li {
-    display: inline-block;
-}
-
 .sub-menu {
     display: none;
 }
@@ -97,12 +89,15 @@ header li {
     -webkit-transition: border-bottom 0.3s ease-out;
     -moz-transition: border-bottom 0.3s ease-out;
     -o-transition: border-bottom 0.3s ease-out;
-    transition: border-bottom 0.3s ease-out;
+    transition: border-bottom 0.25s ease-out, background-color 0.25s, color 0.25s;
     line-height: 2.5em;
 }
 
+.menu-item a:focus,
 .menu-item a:hover {
-    border-bottom: 2px solid steelblue;
+    color: white;
+    background-color: steelblue;
+    border-bottom: 2px solid #050a0d;
 }
 
 .dropdown-menu {
@@ -119,47 +114,40 @@ header li {
     right: 0px;
 }
 
-.header__icons__icon {
+.header__icons__icon a {
     background: url('[THEME_ROOT]/css/icons.png') no-repeat;
     width: 35px; /* change to 50px 50px if full size */
     height: 35px;
+    padding: 20px;
     display: inline-block;
-    border-radius: 10px;
     background-size: 400px auto; /* shrink to 2/3rds of normal size */
 }
 
-.header__icons__icon--twitter {
+.header__icons__icon--twitter a {
     background-position: -62px -533px;
 }
 
-.header__icons__icon--twitter:hover {
+.header__icons__icon--twitter a:focus,
+.header__icons__icon--twitter a:hover {
     background-position: -62px -106px;
 }
 
-.header__icons__icon--linkedin {
+.header__icons__icon--linkedin a {
     background-position: -222px -533px;
 }
 
-.header__icons__icon--linkedin:hover {
+.header__icons__icon--linkedin a:focus,
+.header__icons__icon--linkedin a:hover {
     background-position: -222px -106px;
 }
 
-.header__icons__icon--github {
+.header__icons__icon--github a {
     background-position: -182px -613px;
 }
 
-.header__icons__icon--github:hover {
+.header__icons__icon--github a:focus,
+.header__icons__icon--github a:hover {
     background-position: -182px -186px;
-}
-
-.header__icons__icon a {
-    display: block;
-    padding: 25px;
-    background: none;
-}
-
-.header__icons__icon__text {
-    display: none;
 }
 
 .main {
