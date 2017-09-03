@@ -4,9 +4,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<meta name="description" content="<?= strip_tags(ChrisApi::description()); ?>" />
-		<title><?= TITLE; ?></title>
+		<title><?php
+			if (function_exists("get_the_title") && !is_home()) {
+				echo get_the_title();
+			}
+			else {
+				// echo ChrisApi::name();
+				echo get_bloginfo('name') . ' » ' . get_bloginfo('description');
+			}
+		?></title>
 		<link rel="shortcut icon" href="/css/favicon.ico" />
-		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 		<link href='<?= get_template_directory_uri(); ?>/css/compiled.php' rel='stylesheet' type='text/css'>
         <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />

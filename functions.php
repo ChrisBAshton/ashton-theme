@@ -14,18 +14,6 @@ try {
     //echo $e->getMessage();
 }
 
-if (!isset($title)) {
-	// if we are on a wordpress page
-	if (function_exists("get_the_title") && !is_home()) {
-		$title = get_the_title();
-	}
-	else {
-		$title = ChrisApi::name();
-	}
-}
-
-define(TITLE, $title);
-
 add_action('after_setup_theme', 'declare_theme_support');
 
 add_action('init', 'wpcodex_add_excerpt_support_for_pages'); // Enables the Excerpt meta box in Page edit screen.
