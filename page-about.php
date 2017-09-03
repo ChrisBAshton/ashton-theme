@@ -2,7 +2,7 @@
 
 <h1>About</h1>
 
-<h3 class="aligncenter"><?= ChrisApi::description(); ?></h3>
+<h2 class="aligncenter"><?= ChrisApi::description(); ?></h2>
 
 <?= ChrisApi::resume(); ?>
 
