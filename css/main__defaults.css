@@ -26,6 +26,10 @@ iframe {
     max-width: 100%;
 }
 
+article {
+    overflow: hidden;
+}
+
 footer {
     text-align: center;
     font-style: italic;

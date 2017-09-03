@@ -16,3 +16,8 @@
 .aligncenter {
     text-align: center;
 }
+
+#disqus_thread {
+    max-width: 35em;
+    margin: 0 auto;
+}
