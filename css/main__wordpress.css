@@ -1,6 +1,7 @@
 .wp-caption {
     text-align: center;
     font-style: italic;
+    max-width: 100%;
 }
 
 .alignleft {
