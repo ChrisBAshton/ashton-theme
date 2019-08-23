@@ -52,11 +52,11 @@ get_header();
     </div>
     <div class="row">
         <div class="col-md-6">
-            <?= file_get_contents('http://api.ashton.codes/oembed/?url=http://api.ashton.codes/card/instagram'); ?>
+            <?= file_get_contents('https://api.ashton.codes/oembed/?url=https://api.ashton.codes/card/instagram'); ?>
         </div>
 
         <div class="col-md-6">
-            <?= file_get_contents('http://api.ashton.codes/oembed/?url=http://api.ashton.codes/card/github'); ?>
+            <?= file_get_contents('https://api.ashton.codes/oembed/?url=https://api.ashton.codes/card/github'); ?>
         </div>
     </div>
 </div>
