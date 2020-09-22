@@ -98,3 +98,52 @@ a[href$=".pdf"] {
   background: url("[THEME_ROOT]/css/pdf.gif") no-repeat center right;
   padding-right: 20px;
 }
+
+/* Links to external sites */
+.main a:not([href^="https://ashton.codes"]):not([href^="/"]):hover::after,
+.main a:not([href^="https://ashton.codes"]):not([href^="/"]):focus::after
+{
+  margin: 0 0.2em;
+  content: "👋";
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 1.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  70% {
+    transform: rotate(14deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  90% {
+    transform: rotate(14deg);
+  }
+  100% {
+    transform: rotate(-8deg);
+  }
+}
