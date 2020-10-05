@@ -14,8 +14,9 @@
 (function () {
     window.addEventListener('keydown', function (e) {
         var terminalContainer = document.getElementById('terminal-placeholder');
+        var keyCodeForCtrl = 17;
         var keyCodeForLetterT = 84;
-        if (e.shiftKey && e.keyCode === keyCodeForLetterT) {
+        if (e.shiftKey && e.keyCode === keyCodeForCtrl) {
             terminalContainer.dataset.active = terminalContainer.dataset.active === "false";
 
             if (terminalContainer.dataset.active && terminalContainer.dataset.loaded === "false") {
@@ -39,7 +40,7 @@
 </script>
 
 <footer>
-Site powered by the <a href="http://api.ashton.codes/">Ashton API</a> (last updated <?= ChrisApi::apiLastUpdated(); ?>). <span class="desktop-only">Think that's nerdy? Try <code>SHIFT + T</code> to open the terminal.</span> All rights reserved.
+Site powered by the <a href="http://api.ashton.codes/">Ashton API</a> (last updated <?= ChrisApi::apiLastUpdated(); ?>). <span class="desktop-only">Think that's nerdy? Try <code>SHIFT + CTRL</code> to open the terminal.</span> All rights reserved.
 </footer>
 
 <?php wp_footer(); ?>
