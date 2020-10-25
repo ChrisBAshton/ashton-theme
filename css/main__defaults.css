@@ -34,6 +34,11 @@ article {
   overflow: hidden;
 }
 
+figcaption {
+  font-style: italic;
+  text-align: center;
+}
+
 footer {
   text-align: center;
   font-style: italic;
