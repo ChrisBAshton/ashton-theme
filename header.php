@@ -18,14 +18,6 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 		<link href='<?= get_template_directory_uri(); ?>/css/compiled.php' rel='stylesheet' type='text/css'>
         <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119009621-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-119009621-1');
-		</script>
         <?php wp_head(); ?>
 	</head>
 	<body>
