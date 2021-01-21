@@ -2,7 +2,9 @@
   // written in PHP, for kicks.
   // ...also to save an offline pre-processing step, and to save the client from having to make multiple requests to the server for my modular CSS.
 
-  header('Content-type: text/css');
+  if (!defined("CSS_SIDELOADED_FROM_HEADER")) {
+    header('Content-type: text/css');
+  }
   ob_start("compress");
   function compress($buffer) {
     /* remove comments */
