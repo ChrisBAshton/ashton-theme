@@ -23,7 +23,7 @@
     // Detect resources in the page marked for inline caching
     // @TODO - only run this step if service worker successfully installs
     var stylesheetsToCache = [];
-    document.getElementsByTagName("style").forEach(function (stylesheet) {
+    Array.from(document.getElementsByTagName("style")).forEach(function (stylesheet) {
       if (stylesheet.getAttribute("data-src") && stylesheet.getAttribute("data-inline-cache")) {
         console.log("Found a stylesheet to cache", stylesheet);
         stylesheetsToCache.push({
@@ -67,7 +67,13 @@
       //   }));
       // });
 
-      var cookie = {};
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+
+      var cookie = JSON.parse(getCookie("inline-cacher") || "{}");
       stylesheetsToCache.forEach(function(stylesheet) {
         cookie[stylesheet.url] = stylesheet.hash;
       });
