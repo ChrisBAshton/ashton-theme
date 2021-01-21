@@ -16,19 +16,10 @@
 		<script>
 		 <?php include "js/client.js"; ?>
 		</script>
-		<link rel="shortcut icon" href="/css/favicon.ico" />
 		<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <?php wp_head(); ?>
 		<?php
-			class InlineCacher {
-				public static function cached($url, $hash) {
-					$cached = json_decode(stripslashes($_COOKIE["inline-cacher"]));
-					return $cached->$url == $hash;
-				}
-			}
-
 			define("CSS_VERSION", "0.1.2");
-
 			if (InlineCacher::cached(get_template_directory_uri() . "/css/compiled.php", CSS_VERSION)) :
 		?>
 			<link href='<?= get_template_directory_uri(); ?>/css/compiled.php' rel='stylesheet' type='text/css'>
@@ -44,8 +35,6 @@
 				?>
 			</style>
 		<?php endif; ?>
-        <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
-        <?php wp_head(); ?>
 	</head>
 	<body>
 
