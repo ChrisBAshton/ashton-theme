@@ -28,7 +28,7 @@
         console.log("Found a stylesheet to cache", stylesheet);
         stylesheetsToCache.push({
           url: stylesheet.getAttribute("data-src"),
-          hash: stylesheet.getAttribute("data-inline-cache"), // @TODO - we need to invalidate when this changes, with `<link rel="stylesheet" data-inline-cache="different-value"...`
+          hash: stylesheet.getAttribute("data-inline-cache"),
           value: stylesheet.innerText.trim(),
         });
       }
@@ -51,33 +51,24 @@
         });
       });
 
-      // caches.open("inline-cache").then(function (cache) {
-      //   // @TODO - retrieve manifest and merge latest cache values into it
-      //   cache.match("manifest").then(async response => {
-      //     if (response) {
-      //       const styles = await responseBodyToString(response.body);
-      //       resolve(styles);
-      //     }
-      //     else {
-      //       resolve(false);
-      //     }
-      //   });
-      //   cache.put("manifest", stylesheetsToCache.map(function(stylesheet) {
-      //     return stylesheet.url
-      //   }));
-      // });
-
       function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
       }
 
+      // update the cookie, so the server knows what's cached locally
       var cookie = JSON.parse(getCookie("inline-cacher") || "{}");
       stylesheetsToCache.forEach(function(stylesheet) {
         cookie[stylesheet.url] = stylesheet.hash;
       });
       document.cookie = "inline-cacher=" + JSON.stringify(cookie);
+
+      // update the cache manifest, so the service worker only intercepts
+      // resource requests that it knows have been cached already
+      caches.open("inline-cache").then(function (cache) {
+        cache.put("manifest", new Response(JSON.stringify(cookie)));
+      });
     }
     else {
       console.log("No fresh resources to cache.");

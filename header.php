@@ -9,7 +9,6 @@
 				echo get_the_title();
 			}
 			else {
-				// echo ChrisApi::name();
 				echo get_bloginfo('name') . ' » ' . get_bloginfo('description');
 			}
 		?></title>
