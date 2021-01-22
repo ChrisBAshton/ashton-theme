@@ -12,14 +12,11 @@
 				echo get_bloginfo('name') . ' » ' . get_bloginfo('description');
 			}
 		?></title>
-		<script>
-		 <?php include "js/client.js"; ?>
-		</script>
 		<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
         <?php wp_head(); ?>
 		<?php
 			define("CSS_VERSION", "0.1.2");
-			if (InlineCacher::cached(get_template_directory_uri() . "/css/compiled.php", CSS_VERSION)) :
+			if (class_exists("InlineCacher") && InlineCacher::cached(get_template_directory_uri() . "/css/compiled.php", CSS_VERSION)) :
 		?>
 			<link href='<?= get_template_directory_uri(); ?>/css/compiled.php' rel='stylesheet' type='text/css'>
 		<?php else: ?>

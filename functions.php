@@ -14,8 +14,6 @@ try {
     //echo $e->getMessage();
 }
 
-require("functions.inlinecacher.php");
-
 add_action('after_setup_theme', 'declare_theme_support');
 
 add_action('init', 'wpcodex_add_excerpt_support_for_pages'); // Enables the Excerpt meta box in Page edit screen.
@@ -64,30 +62,3 @@ function style_loading() {
 }
 
 add_action( 'wp_enqueue_scripts', 'style_loading' );
-
-add_filter('style_loader_tag',  'inline_cacher_logic', 10, 4);
-function inline_cacher_logic( $html, $handle, $href, $media ) {
-	$inline_cache_resources = array(
-		// @TODO - either accept a list from admin/plugin config, or auto-cache all
-		// (non admin?) CSS
-		"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css",
-		"https://ashton.codes/blog/wp-content/themes/ashton/style.css"
-	);
-
-	foreach($inline_cache_resources as $resource) {
-		if (strpos($href, $resource) !== false) {
-			preg_match('/\?ver=(.*)$/', $href, $matches);
-			if ($matches[1]) {
-				$version = $matches[1];
-				if (InlineCacher::cached($href, $version)) {
-					return '<link href="' . $href . '" rel="stylesheet" type="text/css" />';
-				}
-				else {
-					return '<style data-src="' . $href . '" data-inline-cache="' . $version . '">/*' . file_get_contents($href) . '*/</style>';
-				}
-			}
-		}
-	}
-
-    return $html;
-}
